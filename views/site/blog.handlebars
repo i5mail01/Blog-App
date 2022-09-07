@@ -1,0 +1,46 @@
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-8 offset-md-2">
+            {{#if sessionFlash.message}}
+            <div class="{{sessionFlash.type}}">
+                {{sessionFlash.message}}
+            </div>
+            {{/if}}
+
+            
+            <article id="post">
+                {{#each posts}}
+                <header class="post-head">
+                    <h1 class="post-title text-center"><a href="posts/{{this.slugTitle}}">{{this.title}}</a></h1>
+
+                    <div class="row post-meta">
+                        <div class="col text-left">
+                            {{generateDate this.date 'MMM DD YYYY'}}, @{{this.author.username}}
+                        </div>
+                        <div class="col text-right">
+                            {{this.category.name}}
+                        </div>
+                    </div>
+
+                </header>
+
+                <div class="post-content">
+                    {{truncate content 200}}
+                </div>
+                 {{/each}}
+            </article>
+
+                   <nav aria-label="Pages">
+  <ul class="pagination justify-content-center">
+                {{#pagination current=current pages=pages}}
+                {{/pagination}}
+
+                 </ul>
+</nav>
+  
+           
+        </div>
+    </div>
+</div>

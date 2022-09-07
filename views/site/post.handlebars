@@ -1,0 +1,43 @@
+
+
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-8 offset-md-2">
+
+                <article id="post">
+                    <header class="post-head">
+                        <h1 class="post-title text-center">{{post.title}}</h1>
+                        
+                        <div class="row post-meta">
+                            <div class="col text-left">
+                                {{generateDate post.date 'MMM DD YYYY'}}, @{{post.author.username}}
+                            </div>
+                            <div class="col text-right">
+                                {{#if post.category}}
+							{{post.category.name}}
+						{{/if}}
+                            </div>
+                        </div>
+
+                    </header>
+
+                    <div class="post-content">
+                        
+                        {{#if post.post_image}}
+                        <!-- if image -->
+						<center><img class="img-fluid" src="{{post.post_image}}" alt=""></center>
+                        {{/if}}
+				   {{post.content}}
+                    </div> 
+					</article> 
+               </div>
+               </div>
+			   </div>
+                
+  
+
+
+

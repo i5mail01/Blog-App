@@ -1,0 +1,28 @@
+<div class="container">
+            	{{#if sessionFlash.message}}
+                <div class="row">
+                    <div class="col-md-6 offset-3">
+						<div class="{{sessionFlash.type}}">
+						{{sessionFlash.message}}
+						</div>
+                        </div>
+                        </div>
+					{{/if}}
+    <div class="row">
+
+        <div class="col-md-6 offset-3">
+
+            <h1 class="login-title text-center">Sign In</h1>
+ 
+                <form action="/users/login" method="POST">
+                <input type="email" name="email" class="form-control margin-tb-1" placeholder="E-mail" required autofocus>
+                <input type="password" name="password" class="form-control margin-tb-1" placeholder="Password" required autofocus>
+                <button id="sendLoginButton" class="btn btn-lg btn-primary btn-block form-control" type="submit">Login</button>
+                <label class="checkbox">
+                    <input type="checkbox" value="remember-me"> remember me
+                </label>
+                </form>
+            </div>
+            
+        </div>
+    </div>

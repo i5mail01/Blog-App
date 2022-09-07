@@ -1,0 +1,29 @@
+{
+  "name": "nodeblog",
+  "version": "1.0.0",
+  "description": "Node Blog App",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect-mongo": "^3.2.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.9",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.0",
+    "method-override": "^3.0.0",
+    "moment": "^2.24.0",
+    "mongoose": "^5.9.1",
+    "nodemon": "^2.0.2",
+    "random-int": "^2.0.1",
+    "url-slug": "^2.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Seyed Ismail",
+  "license": "ISC",
+  "devDependencies": {
+    "handlebars": "^4.5.3"
+  }
+}

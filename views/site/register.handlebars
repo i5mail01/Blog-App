@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-3">
+            <h1 class="login-title text-center">Sign Up</h1>
+
+                <form action="/users/register" id="registerForm" name="sentLogin" novalidate="novalidate" method="POST">
+                <input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
+                <input type="email" name="email" class="form-control" placeholder="E-mail" required autofocus>
+                <input type="password" name="password" class="form-control" placeholder="Password" required autofocus>
+                <button id="sendRegisterButton" class="btn btn-lg btn-primary btn-block form-control" type="submit">Register</button>
+                <label class="checkbox">
+                    <input type="checkbox" value="remember-me"> remember me </label>
+                </form>
+            </div>
+        </div>
+    </div>

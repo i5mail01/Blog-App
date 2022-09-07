@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg nav-bg">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><a class="{{#if active.blog}}active{{/if}} nav-link" href="/blog">Blog</a></li>
+      
+
+      {{#if adminLink}}      <li class="nav-item"><a class="{{#if active.admin}}active{{/if}} nav-link" href="/admin">Admin</a></li>
+      <li class="nav-item"><a class="{{#if active.addpost}}active{{/if}} nav-link" href="/posts/new">Add Post</a></li>
+      {{/if}}
+
+
+      {{#unless displayLink}}
+      <li class="nav-item"><a class="{{#if active.login}}active{{/if}} nav-link" href="/users/login">Login</a></li>
+      <li class="nav-item"><a class="{{#if active.register}}active{{/if}} nav-link" href="/users/register">Register</a>
+      </li>
+      {{/unless}}
+
+      {{#if displayLink}}
+      <li class="nav-item "><a href="/users/logout" class="nav-link">Log Out</a></li>
+
+      {{/if}}
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Categories
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          {{#each categories}}
+
+          <a class="dropdown-item" href="/posts/category/{{this._id}}">{{this.name}}</a>
+
+          {{/each}}
+
+      </li>
+
+    </ul>
+
+    <form class="form-inline" action="/posts/search" method="GET">
+      <input class="form-control" name="search" type="search" placeholder="Type here">
+      <button class="btn btn-danger" type="submit">Search</button>
+    </form>
+  </div>
+</nav>

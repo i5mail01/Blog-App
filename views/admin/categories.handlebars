@@ -1,0 +1,51 @@
+
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-12">
+                    <h1 class="camel-title text-center">Category List</h1>
+
+    {{> admin-nav}}
+
+</div>
+</div>
+<hr>
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <form action=" " method="POST" enctype="multipart/form-data">
+                <input type="text" name="name" class="form-control margin-tb-1" placeholder="Category" required autofocus>
+                <button class="btn btn-lg btn-dark btn-block form-control" type="submit">Add</button>
+            </form>
+        </div>
+    </div><hr></div>
+            <div class="row">
+        <div class="col-md-4 mx-auto">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Category Name</th>
+                        <th scope="col">Delete Category</th>
+                    </tr>
+                <tbody>
+                    {{#each categories}}
+                    <tr>
+                        <td>{{this._id}}</td>
+                        <td>{{this.name}}</td>
+                        <td> 
+                            <!-- DELETE = OVERRIDE METHOD -->
+                            <form action ="/admin/categories/{{this._id}}?_method=DELETE" method="POST">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn btn-outline-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+                </thead>
+            </table>
+        </div>
+    </div>
+    </div>

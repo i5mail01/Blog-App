@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-3">
+
+            <h1 class="addpost-title text-center">Add Article</h1>
+            <div class="margin-tb-2">
+
+                <form action="/posts/add" method="POST" enctype="multipart/form-data">
+                    <input type="text" name="title" class="form-control" placeholder="Title" required autofocus>
+                    <textarea name="content" class="form-control" rows="5" placeholder="Content" required autofocus></textarea>
+                    <input type="file" accept="image/*" name="post_image" class="form-control" autofocus>
+
+                    <select name="category" class="form-control">
+                        {{#each categories}}
+                        <option value="{{this._id}}">{{this.name}}</option>
+                        {{/each}}
+                    </select>
+
+                    <button class="btn btn-lg btn-primary btn-block form-control" type="submit">
+                        Add </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

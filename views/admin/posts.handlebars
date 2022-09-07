@@ -1,0 +1,47 @@
+
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-12">
+                    <h1 class="camel-title text-center">Articles</h1>
+
+    {{> admin-nav}}
+
+</div>
+</div>
+<hr>
+    <div class="row">
+        <div class="mx-auto">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                <tbody>
+                    {{#each posts}}
+                    <tr>
+                        <td>{{this.title}}</td>
+                        <td>{{this.category.name}}</td>
+                        <td>
+                            <a href="/admin/posts/edit/{{this._id}}" class="btn btn-outline-success">Edit</a>
+                        </td>
+                        <td> 
+                            <!-- DELETE = OVERRIDE METHOD -->
+                            <form action ="/admin/posts/{{this._id}}?_method=DELETE" method="POST">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn btn-outline-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+                </thead>
+            </table>
+        </div>
+    </div>
+    </div>
